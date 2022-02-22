@@ -29,3 +29,5 @@ $t('sys_department.name')
 import i18n from '@/common/plugins/vue-i18n'
 i18n.tc('GENERAL.DEPARTMENT')
 ```
+
+test
