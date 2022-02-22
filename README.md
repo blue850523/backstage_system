@@ -1,4 +1,4 @@
-# tc_web_front_end
+# backstage_system
 
 ## Project setup
 ```
@@ -17,6 +17,11 @@ yarn build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### Demo 賬密
+superadmin
+superadmin12345
 
 
 ### i18n

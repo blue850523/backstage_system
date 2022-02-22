@@ -4,6 +4,9 @@ function resolve(dir) {
 }
 
 module.exports = {
+    publicPath: process.env.NODE_ENV === 'production'
+    ? '/backstage-system/'
+    : '/',
     chainWebpack(config) {
         // set svg-sprite-loader
         config.module.rule("svg").exclude.add(resolve("src/icons")).end();
