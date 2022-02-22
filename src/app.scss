@@ -1,0 +1,308 @@
+@import "/node_modules/vue2-datepicker/scss/index.scss";
+$border-color: black;
+$namespace: "mx";
+//
+.mx-datepicker {
+    margin-left: 3%;
+    width: 105%;
+    height: 40px;
+    .mx-input-wrapper {
+        width: 100%;
+        input {
+            padding-top: 8px;
+            font-size: 13px;
+            border: 1px solid black;
+        }
+        :focus {
+            border: 1px solid #4099ffd8;
+            box-shadow: 0.01px 0.01px 3px 0.01px #409aff;
+        }
+    }
+}
+
+.field-scale {
+    --scale: 1;
+    min-width: calc(100px * var(--scale));
+    max-width: calc(100px * var(--scale));
+}
+
+.field-scale-1 {
+    @extend .field-scale;
+    --scale: 1;
+}
+
+.field-scale-2 {
+    @extend .field-scale;
+    --scale: 2;
+}
+
+.field-scale-3 {
+    @extend .field-scale;
+    --scale: 3;
+}
+
+// font style
+h1, .h1 {
+    font-family: "Font-Custom-Light";
+    font-size: 6rem;
+    line-height: 7.6rem;
+    letter-spacing: 0;
+}
+
+h2, .h2 {
+    font-family: "Font-Custom-Regular";
+    font-size: 4.8rem;
+    line-height: 6.4rem;
+    letter-spacing: 0;
+}
+
+h3, .h3 {
+    font-family: "Font-Custom-Regular";
+    font-size: 3.4rem;
+    line-height: 4.8rem;
+    letter-spacing: 0.5px;
+}
+
+h4, .h4 {
+    font-family: "Font-Custom-Regular";
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    letter-spacing: 0.5px;
+}
+
+h5, .h5 {
+    font-family: "Font-Custom-Regular";
+    font-size: 2rem;
+    line-height: 2.8rem;
+    letter-spacing: 0.7px;
+}
+
+st1, .st1 {
+    font-family: "Font-Custom-Medium";
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.3px;
+}
+
+st2, .st2 {
+    font-family: "Font-Custom-Medium";
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.3px;
+}
+
+bd1, .bd1 {
+    font-family: "Font-Custom-Regular";
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.3px;
+}
+
+bd2, .bd2 {
+    font-family: "Font-Custom-Regular";
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.3px;
+}
+
+c1, .c1 {
+    font-family: "Font-Custom-Medium";
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    letter-spacing: 0.8px;
+}
+
+a {
+    display: inline-block;
+}
+
+// panel
+.accmanage {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #fff;
+    .vc-panel {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        margin: 1rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 13px 0 #aac1db;
+        .vc-panel-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 4.5rem;
+            padding: 0 1.5rem;
+            border-radius: 10px 10px 0 0;
+            background: #22354d;
+            .vc-panel-title {
+                font-size: 1.8rem;
+                color: #fff;
+            }
+        }
+        .vc-panel-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            .vc-panel-body-search {
+                margin: 1rem 1rem 0;
+                padding: 0 0 4rem;
+                border-right: 0.2rem solid #f9f9f9;
+                border-left: 0.2rem solid #f9f9f9;
+                .vc-panel-body-search-row {
+                    padding: 0.5rem 1.5rem 0;
+                    .control-label {
+                        display: inline-block;
+                        margin: 0.5rem 0;
+                        font-size: 1.8rem;
+                        font-weight: bold;
+                    }
+                }
+            }
+            .vc-panel-body-list {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                margin: 0 1rem 1rem;
+                .vc-panel-body-list-table {
+                    flex: 1;
+                    position: relative;
+                }
+            }
+        }
+        .btn {
+            min-width: 9rem;
+        }
+    }
+}
+
+// table
+.table-area {
+    position: relative;
+}
+.table-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    .thead {
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+    .tbody {
+        flex: 1;
+        overflow-y: scroll;
+        .btn {
+            min-width: auto;
+        }
+    }
+    .tr_red {
+        td {
+            color: #F03447;
+        }
+    }
+}
+
+// modal
+.modal {
+    display: none;
+    overflow-y: auto;
+    font-family: "Font-Custom-Regular" !important;
+    .modal-dialog {
+        .modal-content {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background-color: #fff;
+            width: 100%;
+            border-radius: 10px;
+            border: none;
+            overflow: hidden;
+            -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 3px 9px rgba(0, 0, 0, 0.4);
+            .modal-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 4.5rem;
+                padding: 0 1.5rem;
+                border-radius: 10px 10px 0 0;
+                background: #22354d;
+                .modal-title {
+                    font-size: 1.8rem;
+                    color: #fff;
+                }
+                button {
+                    min-width: 9rem;
+                }
+                .close {
+                    display: none;
+                }
+            }
+            .modal-body {
+                position: relative;
+                padding: 15px;
+                text-align: left;
+                .control-label {
+                    margin: 0.5rem 0;
+                    font-size: 1.8rem;
+                    text-align: left;
+                    font-weight: bold;
+                }
+                .checkbox-label{
+                    font-size: 1.3rem;
+                    font-weight: bold;
+                }
+                .bootbox-body {
+                    font-size: 1.4rem;
+                }
+            }
+
+            .modal-footer {
+                border: none;
+                padding: 1.5rem;
+                .btn {
+                    min-width: 9rem;
+                }
+            }
+        }
+    }
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+}
+
+.modal-backdrop.fade {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.modal-backdrop.in {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll;
+}
+.no-autofill-pwd {
+    .el-input__inner {
+        -webkit-text-security: disc !important;
+    }
+}

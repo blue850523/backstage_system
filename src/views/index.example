@@ -1,0 +1,250 @@
+<template>
+    <div class="accmanage">
+        <div class="vc-panel" id="main-panel">
+            <div class="vc-panel-heading">
+                <span class="vc-panel-title">範本管理</span>
+                <div class="pull-right">
+                    <button class="btn btn-new" @click="create()">
+                        新增
+                    </button>
+                </div>
+            </div>
+
+            <div class="vc-panel-body">
+                <form id="search-panel" class="vc-panel-body-search watermark-container" @keyup.enter="search()">
+                    <WaterMark />
+                    <div class="subTitle justify-content-between">
+                        選擇搜尋條件
+                    </div>
+
+                    <div class="vc-panel-body-search-row row row-cols-4 gx-0 gy-1">
+                        <FilterInputField
+                            label="戶口編號"
+                            id="filter_account_no"
+                            name="filter_account_no"
+                            maxlength="10"
+                            only_number
+                            v-model="filters.account_no"
+                        />
+
+                        <FilterSelectField
+                            label="戶口狀態"
+                            name="filter_status"
+                            id="filter_status" 
+                            :options="[
+                                { value: '', option: ''},
+                                { value: 0, option: '未完成'},
+                                { value: 1, option: '已完成'},
+                            ]"
+                            v-model="filters.status"
+                        />
+                    </div>
+
+                    <div class="vc-panel-body-search-row row g-0">
+                        <div class="col text-end">
+                            <button class="btn btn-p btn-mr4" type="button" @click="search()">
+                                搜尋
+                            </button>
+                            <button class="btn btn-p" type="reset" @click="reset()">
+                                重置
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <div id="list-panel" class="vc-panel-body-list">
+                    <div class="subTitle justify-content-between">
+                        檢視搜尋結果
+                        <div class="text-end">
+                            <button class="btn btn-new5 btn-mr4" @click="select_display_fields">
+                                篩選顯示
+                            </button>
+
+                            <button class="btn btn-new2 btn-mr4">
+                                列印
+                            </button>
+
+                            <button class="btn btn-new3 btn-mr4">
+                                匯出EXCEL
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="vc-panel-body-list-table">
+                        <div class="table-container watermark-container">
+                            <WaterMark />
+                            <div class="table-responsive nopadding thead" ref="thead">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr class="table-title-bar">
+                                            <th class="text-center" :style="operation_col_width()">
+                                                操作
+                                            </th>
+                                            <th 
+                                                v-for="field in filter_fields" 
+                                                :key="field.key" 
+                                                class="text-center"
+                                                :class="`field-scale-${field.scale}`">
+                                                {{ field.label }}
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <div class="table-responsive nopadding tbody" ref="tbody" @scroll="sync_thead_scroll()">
+                                <table class="table table-bordered table-hover">
+                                    <tbody>
+                                        <!-- 測試用
+                                        <tr>
+                                            <td class="text-center" :style="operation_col_width()">
+                                                <button class="btn btn-p btn-mr4" @click="detail()">詳細</button>
+                                                <button class="btn btn-w btn-mr4" @click="edit()">修改</button>
+                                            </td>
+                                            <td
+                                                v-for="field in filter_fields"
+                                                :key="field.key"
+                                                class="text-left"
+                                                :class="`field-scale-${field.scale}`">
+                                                {{ field.label }}
+                                            </td>
+                                        </tr> -->
+                                        <tr 
+                                            v-for="(record, index) in list"
+                                            :key="index"
+                                            :class="{selectedTr: selected_index.includes(index)}" 
+                                            @click="handle_acitve_tr(index)">
+                                            <td class="text-center" :style="operation_col_width()">
+                                                <button class="btn btn-p btn-mr4" @click="detail(record)">詳細</button>
+                                                <button class="btn btn-w btn-mr4" @click="edit(record)">修改</button>
+                                            </td>
+                                            <td
+                                                v-for="field in filter_fields"
+                                                :key="field.key"
+                                                class="text-left"
+                                                :class="`field-scale-${field.scale}`">
+                                                {{ record[field.key] }}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Pagination ref="page" @searchService="pageSearch" />
+        </div>
+        <PageRemark :html="footer_total" />
+        <DisplayColumn
+            @hidden_fields="getHiddenFields"
+            :fields="fields"
+            ref="displayColumn"
+        />
+    </div>
+</template>
+
+<script>
+import FilterInputField from "@/components/tc_components/filter_input_field.vue";
+import FilterSelectField from "@/components/tc_components/filter_select_field.vue";
+import PageRemark from "@/components/tc_components/page_remark.vue";
+// import getFields from "./column";
+
+const API = {
+
+};
+
+export default {
+    name: "example",
+    components: {
+        FilterInputField,
+        FilterSelectField,
+        PageRemark,
+    },
+    data: function () {
+        return {
+            fields: [],
+            list: [],
+            filters: {
+                account_no: "",
+                status: "",
+                page: 1,
+                limit: 20
+            },
+            hidden_fields: [],
+            operation_width: "100px",
+            selected_index: [],
+            footer_total: "",
+            permissions: {},
+        };
+    },
+    computed: {
+        filter_fields () {
+            let fields = this.fields;
+            let selectFields = [];
+            fields.forEach((params) => {
+                if (!this.hidden_fields.includes(params.key)) {
+                    selectFields = [...selectFields, params];
+                }
+            });
+            return selectFields;
+        }
+    },
+    created () {
+        // this.get_columns();
+        // this.set_permission();
+    },
+    methods: {
+        operation_col_width () {
+            return {
+                "width": this.operation_width,
+                "min-width": this.operation_width,
+                "max-width": this.operation_width,
+            }
+        },
+        pageSearch (data) {
+            this.filters = { ...this.filters, ...data };
+            this.search();
+        },
+        get_columns () {
+            // this.fields = getFields();
+        },
+        async search () {
+            console.log(this.filters);
+        },
+        reset () {
+            let {limit, page} = JSON.parse(JSON.stringify(this.filters));
+            Object.assign(this.$data.filters, this.$options.data().filters);
+            this.filters.limit = limit;
+            this.filters.page = page;
+        },
+        async create () {
+            
+        },
+        async detail () {
+
+        },
+        async edit () {
+
+        },
+        sync_thead_scroll () {
+            $(this.$refs.thead).scrollLeft($(this.$refs.tbody).scrollLeft());
+        },
+        getHiddenFields(hidden_fields) {
+            this.hidden_fields = hidden_fields;
+        },
+        select_display_fields () {
+            this.$refs.displayColumn.show();
+        },
+        handle_acitve_tr (index){
+            if (this.selected_index.indexOf(index) == -1) {
+                this.selected_index.push(index);
+            } else {
+                this.selected_index.splice(this.selected_index.indexOf(index), 1)
+            }
+        },
+        async set_permission () {
+            this.permissions = getModulePermissions();
+        }
+    }
+}
+</script>

@@ -1,0 +1,478 @@
+[
+    {
+        "href": "",
+        "icon": "fa-user",
+        "key": "1",
+        "name": "戶口管理",
+        "children": [
+            {
+                "href": "/accmanage",
+                "icon": "fa-angle-double-right",
+                "key": "1_1",
+                "name": "戶口管理",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "1_2",
+                "name": "戶口格仔表",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "1_3",
+                "name": "戶口文件檔",
+                "children": [
+                    {
+                        "href": "/acc_loan_doc",
+                        "icon": "fa-angle-double-right",
+                        "key": "1_3_1",
+                        "name": "借貸文件",
+                        "children": []
+                    },
+                    {
+                        "href": "/acc_internal_doc",
+                        "icon": "fa-angle-double-right",
+                        "key": "1_3_2",
+                        "name": "內部文件",
+                        "children": []
+                    },
+                    {
+                        "href": "/acc_real_estate_doc",
+                        "icon": "fa-angle-double-right",
+                        "key": "1_3_3",
+                        "name": "資產資料(不動產)",
+                        "children": []
+                    },
+                    {
+                        "href": "/acc_company_doc",
+                        "icon": "fa-angle-double-right",
+                        "key": "1_3_4",
+                        "name": "資產資料(公司)",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "href": "/order_note",
+                "icon": "fa-angle-double-right",
+                "key": "1_4",
+                "name": "提醒管理",
+                "children": []
+            }
+        ]
+    },
+    {
+        "href": "",
+        "icon": "fa-user",
+        "key": "2",
+        "name": "轉碼管理",
+        "children": [
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "2_1",
+                "name": "即時轉碼",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "2_2",
+                "name": "轉碼記錄",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "2_3",
+                "name": "轉碼匯總",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "2_4",
+                "name": "場次記錄",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "2_5",
+                "name": "轉碼活動設定",
+                "children": []
+            }
+        ]
+    },
+    {
+        "href": "",
+        "icon": "fa-user",
+        "key": "3",
+        "name": "圍數管理",
+        "children": [
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "3_1",
+                "name": "截更管理",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "3_2",
+                "name": "截大數管理",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "3_3",
+                "name": "籌碼互換",
+                "children": []
+            }
+        ]
+    },
+    {
+        "href": "",
+        "icon": "fa-user",
+        "key": "4",
+        "name": "買碼管理",
+        "children": [
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "4_1",
+                "name": "買碼管理",
+                "children": []
+            }
+        ]
+    },
+    {
+        "href": "",
+        "icon": "fa-user",
+        "key": "5",
+        "name": "存款管理",
+        "children": [
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "5_1",
+                "name": "存款管理",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "5_2",
+                "name": "存款匯總",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "5_3",
+                "name": "存款流水",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "5_4",
+                "name": "集團存款流水",
+                "children": []
+            }
+        ]
+    },
+    {
+        "href": "",
+        "icon": "fa-user",
+        "key": "6",
+        "name": "貸款管理",
+        "children": [
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "6_1",
+                "name": "貸款還款",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "6_2",
+                "name": "貸款流水",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "6_3",
+                "name": "貸款匯總",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "6_4",
+                "name": "利息管理",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "6_5",
+                "name": "戶口批額設定",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "6_6",
+                "name": "批額設定流水",
+                "children": []
+            }
+        ]
+    },
+    {
+        "href": "",
+        "icon": "fa-user",
+        "key": "7",
+        "name": "飛數管理",
+        "children": [
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "7_1",
+                "name": "飛數記錄",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "7_2",
+                "name": "飛數匯總",
+                "children": []
+            }
+        ]
+    },
+    {
+        "href": "",
+        "icon": "fa-user",
+        "key": "8",
+        "name": "場面數管理",
+        "children": [
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "8_1",
+                "name": "場面數記錄",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "8_2",
+                "name": "場次記錄",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "8_3",
+                "name": "場面數匯總",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "8_4",
+                "name": "場面截數",
+                "children": []
+            }
+        ]
+    },
+    {
+        "href": "",
+        "icon": "fa-user",
+        "key": "9",
+        "name": "佣金出糧管理",
+        "children": [
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "9_1",
+                "name": "佣金設定",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "9_2",
+                "name": "客戶欠數表",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "9_3",
+                "name": "欠數流水",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "9_4",
+                "name": "佣金還欠數表",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "9_5",
+                "name": "出佣單管理",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "9_6",
+                "name": "津貼管理",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "9_7",
+                "name": "津貼流水",
+                "children": []
+            }
+        ]
+    },
+    {
+        "href": "",
+        "icon": "fa-user",
+        "key": "10",
+        "name": "碼糧管理",
+        "children": [
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "10_1",
+                "name": "即出碼糧",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "10_2",
+                "name": "即出記錄",
+                "children": []
+            }
+        ]
+    },
+    {
+        "href": "",
+        "icon": "fa-user",
+        "key": "11",
+        "name": "賭檯系統",
+        "children": [
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "11_1",
+                "name": "賭房管理",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "11_2",
+                "name": "賭檯管理",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "11_3",
+                "name": "上下數記錄",
+                "children": []
+            }
+        ]
+    },
+    {
+        "href": "",
+        "icon": "fa-user",
+        "key": "12",
+        "name": "話機管理",
+        "children": [
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "12_1",
+                "name": "通話記錄",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "12_2",
+                "name": "錄音記錄",
+                "children": []
+            },
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "12_3",
+                "name": "驗證記錄",
+                "children": []
+            }
+        ]
+    },
+    {
+        "href": "",
+        "icon": "fa-user",
+        "key": "13",
+        "name": "系統管理",
+        "children": [
+            {
+                "href": "",
+                "icon": "fa-angle-double-right",
+                "key": "13_1",
+                "name": "列印設置",
+                "children": []
+            },
+            {
+                "href": "/sys_staff",
+                "icon": "fa-angle-double-right",
+                "key": "13_2",
+                "name": "職員管理",
+                "children": []
+            },
+            {
+                "href": "/sys_staff_position",
+                "icon": "fa-angle-double-right",
+                "key": "13_3",
+                "name": "職位管理",
+                "children": []
+            },
+            {
+                "href": "/sys_department",
+                "icon": "fa-angle-double-right",
+                "key": "13_4",
+                "name": "部門管理",
+                "children": []
+            }
+        ]
+    },
+    {
+        "href": "",
+        "icon": "fa-user",
+        "key": "14",
+        "name": "報表",
+        "children": []
+    }
+]

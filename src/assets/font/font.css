@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Font-Custom-Regular';
+    src: url("~@/assets/font/NotoSansTC-Regular.otf");
+    unicode-range: U+4E00-9FFF;
+}
+
+@font-face {
+    font-family: 'Font-Custom-Regular';
+    src: url("~@/assets/font/Roboto-Regular.ttf");
+    unicode-range: U+00-024F;
+}
+
+.Font-Custom-Regular {
+    font-family: 'Font-Custom-Regular';
+}
+
+@font-face {
+    font-family: 'Font-Custom-Medium';
+    src: url("~@/assets/font/NotoSansTC-Medium.otf");
+    unicode-range: U+4E00-9FFF;
+}
+
+@font-face {
+    font-family: 'Font-Custom-Medium';
+    src: url("~@/assets/font/Roboto-Medium.ttf");
+    unicode-range: U+00-024F;
+}
+
+.Font-Custom-Medium {
+    font-family: 'Font-Custom-Medium';
+}
+
+@font-face {
+    font-family: 'Font-Custom-Light';
+    src: url("~@/assets/font/NotoSansTC-Light.otf");
+    unicode-range: U+4E00-9FFF;
+}
+
+@font-face {
+    font-family: 'Font-Custom-Light';
+    src: url("~@/assets/font/Roboto-Light.ttf");
+    unicode-range: U+00-024F;
+}
+
+.Font-Custom-Light {
+    font-family: 'Font-Custom-Light';
+}
