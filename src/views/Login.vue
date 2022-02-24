@@ -1,12 +1,13 @@
 <template>
     <div class="login">
         <div class="login_logo">
-            <img src="@/assets/image/vclogo_login.png" alt="">
+            <!-- <img src="@/assets/image/vclogo_login.png" alt=""> -->
+            <img src="@/assets/logo.png" alt="">
         </div>
         <div class="login_container">
             <div class="login_title">
                 <h1>歡迎</h1>
-                <h3>賬房管理系統</h3>
+                <h3>後台管理系統</h3>
             </div>
             <div class="form-group">
                 <label class="form-label" for="input-username">職員編號</label>
@@ -69,20 +70,38 @@ export default {
             }
             
             // =====測試用=====
-            // sessionStorage["user_token"] = 'test';
-            // sessionStorage["staff_name"] = 'test';
-            // sessionStorage["staff_no"] = 'test';
-            // sessionStorage["user_permissions"] = ['*'];
-            // this.$store.commit("SET_USER_TOKEN", 'test');
-            // this.$store.commit("SET_STAFF_NAME", 'test');
-            // this.$store.commit("SET_STAFF_NO", 'test');
-            // this.$store.commit("SET_USER_PERMISSIONS", ['*']);
-            // console.log("user_token", this.$store.state.user_token);
+            if (this.username === "superadmin" && this.password === "superadmin12345") {
+                sessionStorage["user_token"] = 'test';
+                sessionStorage["staff_name"] = '超級管理員';
+                sessionStorage["staff_no"] = 'superadmin';
+                sessionStorage["user_permissions"] = ['*'];
+    
+                this.$store.commit("SET_USER_TOKEN", 'test');
+                this.$store.commit("SET_STAFF_NAME", '超級管理員');
+                this.$store.commit("SET_STAFF_NO", 'superadmin');
+                this.$store.commit("SET_USER_PERMISSIONS", ['*']);
 
-            // if (this.$store.state.user_token !== null)
-            //     this.$router.push("/content", () => {});
+                this.$message.success({
+                    duration: 3000,
+                    offset: 28,
+                    message: "登入成功",
+                    center: true,
+                });
+    
+                if (this.$store.state.user_token !== null)
+                    this.$router.push("/content", () => {});
+            } else {
+                this.password_error = true;
+                this.$message.closeAll();
+                this.$message.error({
+                    duration: 3000,
+                    offset: 28,
+                    message: "登入帳號密碼錯誤",
+                    center: true,
+                });
+            }
 
-            // return;
+            return;
             // =====測試用=====
 
             let url = `${process.env.VUE_APP_DEV_LARAVEL}/api/auth/login`;
@@ -176,6 +195,9 @@ export default {
     color: #FFF;
     .login_logo {
         margin-top: 14.16vh;
+        img {
+            height: 12.5rem;
+        }
     }
     .login_container {
         display: flex;

@@ -19,9 +19,11 @@ yarn build
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
-### Demo 賬密
+### 帳號密碼
+```
 superadmin
 superadmin12345
+```
 
 
 ### i18n

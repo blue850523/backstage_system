@@ -5,7 +5,7 @@ function resolve(dir) {
 
 module.exports = {
     publicPath: process.env.NODE_ENV === 'production'
-    ? '/backstage-system/'
+    ? '/backstage_system/'
     : '/',
     chainWebpack(config) {
         // set svg-sprite-loader
@@ -22,7 +22,7 @@ module.exports = {
             })
             .end();
     },
-    devServer: {
-        proxy: 'http://dev-tc-laravel.vc-technology.com',
-    }
+    // devServer: {
+    //     proxy: 'http://dev-tc-laravel.vc-technology.com',
+    // }
 };

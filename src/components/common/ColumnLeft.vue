@@ -2,7 +2,8 @@
     <div class="column_left">
         <div class="header_logo">
             <a @click="reload()">
-                <img src="@/assets/image/vclogo.png" alt="" />
+                <!-- <img src="@/assets/image/vclogo.png" alt="" /> -->
+                <img src="@/assets/logo.png" alt="">
             </a>
         </div>
         <div class="sidebar">

@@ -35,6 +35,7 @@ import Header from "@/components/common/Header.vue";
 import ColumnLeft from "@/components/common/ColumnLeft.vue";
 import menuList from "@/json/menuList.json";
 import ElementUI from "element-ui";
+import { locale as tree } from "@/common/config/i18n/zh";
 export default {
     name: "main_content",
     components: {
